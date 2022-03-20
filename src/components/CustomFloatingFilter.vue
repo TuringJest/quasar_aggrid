@@ -14,7 +14,7 @@
       <template #append>
         <q-icon
           v-if="filterModel"
-          class="cursor-pointer clear-select-btn"
+          class="cursor-pointer"
           name="o_clear"
           size="xs"
           @click.prevent.stop="onClear"
@@ -42,6 +42,7 @@ const {
   onParentModelChanged,
 } = useAgGridFloatingFilter(props.params, filterModel, select);
 
+
 /**
  * Navigation Helpers
  */
@@ -60,7 +61,9 @@ function onClear() {
 }
 
 function onPopupHide() {
-  // will break AgGrid tabbing into the next header when the popup is open
+  // Will interfere if we focus another element.
+  // E.g. tabbing will not focus correctly anymore.
+
   nextTick(() => focusAgHeader())
 }
 

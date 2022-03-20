@@ -19,7 +19,7 @@
       <template #append>
         <q-icon
           v-if="filterModel"
-          class="cursor-pointer clear-select-btn"
+          class="cursor-pointer"
           name="o_clear"
           size="xs"
 
@@ -157,14 +157,7 @@ defineExpose({
 </script>
 
 
-<style lang="scss">
-.filter-select {
-  .q-field--auto-height .q-field__control, .q-field--auto-height .q-field__native {
-    min-height: unset;
-    height: 40px;
-  }
-}
-
+<style lang="scss" scoped>
 .focus-target {
   position: absolute;
   pointer-events: none;
